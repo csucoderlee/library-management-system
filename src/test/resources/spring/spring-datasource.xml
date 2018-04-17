@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd
+                           http://mybatis.org/schema/mybatis-spring
+                           http://mybatis.org/schema/mybatis-spring.xsd">
+
+    <context:property-placeholder location="classpath:build.properties"/>
+    <mybatis:scan base-package="org.csu.coderlee.dao"/>
+
+    <!-- 慢sql监控-->
+    <bean id="stat-filters" class="com.alibaba.druid.filter.stat.StatFilter">
+        <property name="slowSqlMillis" value="1000"/>
+    </bean>
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <!-- StatFilter的别名是stat，这个别名映射配置信息保存在druid-xxx.jar!/META-INF/druid-filter.properties -->
+        <!--<property name="filters" value="stat" />-->
+
+        <!-- 别名配置是通过filters属性配置的，filters属性的类型是String。如果需要通过bean的方式配置，使用proxyFilters属性 -->
+        <property name="driverClassName" value="${jdbc.business.driverClassName}"/>
+        <property name="username" value="${jdbc.business.username}"/>
+        <property name="url" value="${jdbc.business.url}"/>
+        <property name="password" value="${jdbc.business.password}"/>
+        <property name="proxyFilters">
+            <ref bean="stat-filters"/>
+        </property>
+    </bean>
+
+
+    <!-- 将数据源映射到sqlSessionFactory中 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="configLocation" value="classpath:mybatis/mybatis-config.xml"/>
+    </bean>
+
+
+    <!-- SqlSession模板类实例 -->
+    <bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
+    <!--======= 事务配置 Begin ================= -->
+    <!-- 事务管理器（由Spring管理MyBatis的事务） -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 关联数据源 -->
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+    <!--======= 事务配置 End =================== -->
+</beans>
