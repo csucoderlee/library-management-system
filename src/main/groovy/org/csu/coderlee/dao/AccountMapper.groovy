@@ -11,4 +11,5 @@ import org.mybatis.spring.annotation.MapperScan
 interface AccountMapper {
 
     Account selectById(id)
+    int inserd(Account account)
 }

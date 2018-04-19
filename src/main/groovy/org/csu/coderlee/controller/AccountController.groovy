@@ -5,6 +5,7 @@ import org.csu.coderlee.service.AccountService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.servlet.ModelAndView
 
@@ -60,8 +61,19 @@ class AccountController {
 
             }
         }
+    }
 
+    //实现注册功能
+    @RequestMapping("/regis")
+    Object regis(Account account){
+
+        def inserd = accountService.inserd(account)
+        println inserd//验证是否插入数据
+        ModelAndView modelAndView = new ModelAndView()
+        modelAndView.setViewName("login")
+        return modelAndView
 
 
     }
+
 }

@@ -18,4 +18,15 @@ class AccountService {
     Account selectById(id) {
         accountMapper.selectById(id)
     }
+
+    //验证插入数据
+    String inserd(Account account){
+        def inserd = accountMapper.inserd(account)
+        String bool=""
+        if(inserd>0)
+            bool="添加成功"
+        else
+            bool="添加失败"
+        return bool
+    }
 }

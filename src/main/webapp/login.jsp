@@ -9,12 +9,14 @@
 <html>
 <head>
     <title>Title</title>
+
 </head>
 <body>
+
 <form action="/account/login" method="post">
     用户名 ：<input type="text" name="username">
     密  码 ：<input type="text" name="password" >
-    <input type="submit" value="登录">
+    <input type="submit" value="登录"> <a href="registered.jsp"><input type="button" value="注册"></a><a href="forget.jsp">忘记密码</a>
 </form>
 
 </body>

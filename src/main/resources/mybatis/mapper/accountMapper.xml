@@ -13,5 +13,9 @@
         from account
         where id = 1
     </select>
+    
+    <insert id="inserd" parameterType="java.lang.Long">
+        INSERT INTO learntest.account (username,password)values (#{username},#{password})
+    </insert>
 
 </mapper>

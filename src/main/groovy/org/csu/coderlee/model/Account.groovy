@@ -6,6 +6,6 @@ package org.csu.coderlee.model
  */
 class Account {
 
-    def username;
-    def password;
+    def username
+    def password
 }
