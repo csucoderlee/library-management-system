@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 class AccountServiceTest extends TestCase{
 
     @Autowired
-    AccountService accountService;
+    AccountService accountService
 
     @Test
     void test() {

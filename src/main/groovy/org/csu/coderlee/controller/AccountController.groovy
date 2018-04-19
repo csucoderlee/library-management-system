@@ -32,7 +32,36 @@ class AccountController {
         ModelAndView modelAndView = new ModelAndView()
         modelAndView.addObject("account", account)
         modelAndView.setViewName("success")
-        return modelAndView;
+        return modelAndView
     }
 
+    //登录验证功能
+    @RequestMapping("/login")
+    @ResponseBody
+    Object longin(Account account){
+        ModelAndView modelAndView = new ModelAndView()
+        def username = account.username
+        def password = account.password
+        def acc = accountService.selectById()
+        println acc.username
+        if (acc.username==username&&acc.password==password){
+            modelAndView.setViewName("success")
+            modelAndView.addObject("name","登录成功")
+            return modelAndView
+        }else {
+            modelAndView.setViewName("defeat")
+            if (acc.username==username){
+                modelAndView.addObject("name","密码错误")
+
+                return modelAndView
+            }else {
+               modelAndView.addObject("name","用户不存在")
+                return modelAndView
+
+            }
+        }
+
+
+
+    }
 }
