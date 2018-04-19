@@ -35,4 +35,11 @@ class AccountController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/login")
+    @ResponseBody
+    Object login() {
+        //TODO 异步插入一条数据
+        return "success"
+    }
+
 }
