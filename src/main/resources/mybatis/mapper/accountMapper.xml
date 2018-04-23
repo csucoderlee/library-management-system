@@ -7,15 +7,13 @@
         <result property="password" column="password"/>
     </resultMap>
 
-    <select id="selectById" resultMap="AccountMap" parameterType="java.lang.Long">
-        select
-        *
-        from account
-        where id = 1
-    </select>
-    
-    <insert id="inserd" parameterType="java.lang.Long">
-        INSERT INTO learntest.account (username,password)values (#{username},#{password})
-    </insert>
+
+   <select id="selectByname" resultMap="AccountMap">
+       select *
+       from account
+       where username = #{username}
+   </select>
+
+
 
 </mapper>

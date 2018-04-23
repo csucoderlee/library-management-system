@@ -10,6 +10,7 @@ import org.mybatis.spring.annotation.MapperScan
 @MapperScan
 interface AccountMapper {
 
-    Account selectById(id)
-    int inserd(Account account)
+    Account selectByname(String username)
+    Account update(Account account)
+
 }

@@ -8,4 +8,12 @@ class Account {
 
     def username
     def password
+
+    @Override
+    String toString() {
+        return "Account{" +
+                "username=" + username +
+                ", password=" + password +
+                '}'
+    }
 }

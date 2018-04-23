@@ -13,20 +13,22 @@ import org.springframework.stereotype.Service
 class AccountService {
 
     @Autowired
-    AccountMapper accountMapper;
+    AccountMapper accountMapper
 
-    Account selectById(id) {
-        accountMapper.selectById(id)
+    String selectByname(username){
+        def byname = accountMapper.selectByname(username)
+        String st = ""
+        if (byname==null){
+           st="用户名不存在！"
+        }else {
+            st="查询成功！"
+        }
+        return st
     }
 
-    //验证插入数据
-    String inserd(Account account){
-        def inserd = accountMapper.inserd(account)
-        String bool=""
-        if(inserd>0)
-            bool="添加成功"
-        else
-            bool="添加失败"
-        return bool
+    Account selectByna(username){
+        def byname = accountMapper.selectByname(username)
+        return byname
     }
+
 }
