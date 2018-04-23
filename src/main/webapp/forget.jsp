@@ -11,8 +11,9 @@
     <title>Title</title>
 </head>
 <body>
-<form action="modify.jsp" method="post">
+<form action="/account/modify" method="post">
     用户名：<input type="text" name="username">
+    密码：<input type="text" name="password">
    <%-- 绑定邮箱：<input type="email" name="email" value="邮箱手机验证待实现"--%>
     <input type="submit" value="确认">
 </form>

@@ -33,12 +33,11 @@ class AccountController {
         println  byname
        return account
     }
-
-    @RequestMapping("/test")
-    Object test(String password,Account account){
-        account.password = password
-        println account
-
+    @RequestMapping("/modify")
+    Object test(Account account){
+        if (account==null){
+            return "forget"
+        }
     }
 
 
