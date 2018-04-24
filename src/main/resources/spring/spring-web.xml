@@ -32,7 +32,9 @@
         </property>
     </bean>
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
+    <!-- 可以识别 redirect: forward: 前缀进行跳转请求 -->
+    <bean class="org.springframework.web.servlet.view.UrlBasedViewResolver" >
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
