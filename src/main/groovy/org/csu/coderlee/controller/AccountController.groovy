@@ -5,6 +5,7 @@ import org.csu.coderlee.service.AccountService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RequestMethod
 import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.servlet.ModelAndView
 
@@ -40,6 +41,33 @@ class AccountController {
     Object login() {
         //TODO 异步插入一条数据
         return "success"
+    }
+
+    /**
+     * {"username":"csucoderlee", "password":"123456"}
+     * @param account
+     * @return
+     */
+    @RequestMapping(value = "/update")
+    @ResponseBody
+    Object update(Account account) {
+
+        println(account.username)
+        println(account.password)
+    }
+
+    @RequestMapping(value = "/scan")
+    @ResponseBody
+    Object scan(sn) {
+
+        if(sn) return "666"
+        return sn? true:false
+    }
+
+    @RequestMapping(value = "/map", method = RequestMethod.POST)
+    @ResponseBody
+    Object map(Map request) {
+        return request.username
     }
 
 }
