@@ -16,6 +16,7 @@
 - 同一本书，由不同的两个人上架怎么办，每一本书是一条图书的记录，记录上标识着被谁拥有
 
 ## 版本 
-- 添加了 mvn clean install 打包跳过测试
-- 添加了mybatis 生成插件, 声明<phase>deploy</phase> mvn clean install 阶段不执行生成代码
-- 声明book 基本模型字段属性
+- 版本0.0.1
+    - 添加了 mvn clean install 打包跳过测试
+    - 添加了mybatis 生成插件, 声明<phase>deploy</phase> mvn clean install 阶段不执行生成代码
+    - 声明book 基本模型字段属性
