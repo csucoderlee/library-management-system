@@ -1,4 +1,4 @@
-package org.csu.coderlee.model;
+package org.csu.coderlee;
 
 /**
  * @author by bixi.lx
