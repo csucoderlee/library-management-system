@@ -1,6 +1,32 @@
 CREATE TABLE `account` (
-  `id` bigint(22) NOT NULL AUTO_INCREMENT,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
+  `id` BIGINT(22) NOT NULL AUTO_INCREMENT,
+  `username` VARCHAR(255) DEFAULT NULL,
+  `password` VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `book` (
+  `id` BIGINT(22) NOT NULL AUTO_INCREMENT,
+  `isbn10` BIGINT(22) NOT NULL,
+  `isbn13` BIGINT(22) NOT NULL,
+  `author` VARCHAR(255) NOT NULL,
+  `publisher` VARCHAR(255) NOT NULL,
+  `pubdate` DATETIME NOT NULL DEFAULT "2000-01-01 00:00:00",
+  `pages` BIGINT(10) NOT NULL,
+  `price` DOUBLE(16,2) NOT null DEFAULT "0.00",
+  `image` VARCHAR(255) DEFAULT NULL,
+  `alt` VARCHAR(255) DEFAULT NULL,
+  `owner_id` BIGINT(22) NOT NULL,
+  `owner_name` VARCHAR(255) NOT NULL,
+  `borrower_id` BIGINT(22) NOT NULL,
+  `borrower_name` VARCHAR(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE `tag` (
+  `id` BIGINT(22) NOT NULL AUTO_INCREMENT,
+  `count` BIGINT(22) NOT NULL,
+  `name` VARCHAR(255) NOT NULL,
+  `title` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
