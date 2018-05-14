@@ -9,4 +9,5 @@ import org.csu.coderlee.model.Book
 interface BookMapper {
 
     List<Book> list()
+    int insert(Book book)
 }

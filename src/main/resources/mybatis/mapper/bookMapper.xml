@@ -3,12 +3,29 @@
 <mapper namespace="org.csu.coderlee.dao.BookMapper">
 
     <resultMap id="BookMap" type="org.csu.coderlee.model.Book">
-        <result property="username" column="username"/>
-        <result property="password" column="password"/>
+        <result property="id" column="id" />
+        <result property="isbn10" column="isbn10" />
+        <result property="isbn13" column="isbn13" />
+        <result property="author" column="author" />
+        <result property="publisher" column="publisher" />
+        <result property="pubdate" column="pubdate" />
+        <result property="pages" column="pages" />
+        <result property="price" column="price" />
+        <result property="image" column="image" />
+        <result property="alt" column="alt" />
+        <result property="ownerId" column="owner_id" />
+        <result property="ownerName" column="owner_name" />
+        <result property="borrowerId" column="borrower_id" />
+        <result property="borrowerName" column="borrower_name" />
     </resultMap>
 
-    <select id="list" resultMap="AccountMap">
+    <select id="list" resultMap="BookMap">
         select * from book
     </select>
+
+    <insert id="insert">
+        insert into book (id, isbn10, isbn13, author, publisher, pubdate, pages, price, image, alt, owner_id, owner_name, borrower_id, borrower_name)
+        values (#{id},#{isbn10},#{isbn13},#{author},#{publisher},#{pubdate},#{pages},#{price},#{image},#{alt},#{ownerId},#{ownerName},#{borrowerId},#{borrowerName})
+    </insert>
 
 </mapper>
