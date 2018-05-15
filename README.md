@@ -21,3 +21,6 @@
     - 添加了 mvn clean install 打包跳过测试
     - 添加了mybatis 生成插件, 声明<phase>deploy</phase> mvn clean install 阶段不执行生成代码
     - 声明book 基本模型字段属性
+
+## mdzz
+- 电脑上 git配置的邮箱变了， 导致提交的代码记录 在github上不做显示
