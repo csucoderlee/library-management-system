@@ -8,4 +8,5 @@ class Account {
 
     def username;
     def password;
+    def birthday
 }

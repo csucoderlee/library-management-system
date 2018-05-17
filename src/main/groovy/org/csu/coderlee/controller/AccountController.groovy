@@ -70,4 +70,10 @@ class AccountController {
         return request.username
     }
 
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ResponseBody
+    Object login(Account account) {
+        return null;
+    }
+
 }
