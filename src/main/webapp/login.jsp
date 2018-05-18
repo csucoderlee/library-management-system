@@ -64,6 +64,9 @@
         $("#CheckMsg").text(msg);
     }
 </script>
+<noscript>
+    javascript代码被您禁止了,请您解除后重新刷新页面
+</noscript>
 </body>
 </html>
 
