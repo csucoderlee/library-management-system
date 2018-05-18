@@ -31,4 +31,15 @@
     <!--</listener>-->
     <!-- logback 日志配置 end -->
 
+    <!-- 处理跨域-->
+    <filter>
+        <filter-name>crossDomainFilter</filter-name>
+        <filter-class>com.wosai.upay.service.util.CrossDomainFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>crossDomainFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
