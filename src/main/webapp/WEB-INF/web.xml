@@ -34,7 +34,7 @@
     <!-- 处理跨域-->
     <filter>
         <filter-name>crossDomainFilter</filter-name>
-        <filter-class>com.wosai.upay.service.util.CrossDomainFilter</filter-class>
+        <filter-class>org.csu.coderlee.utils.CrossDomainFilter</filter-class>
     </filter>
 
     <filter-mapping>
