@@ -21,18 +21,15 @@ public class CookieUtils {
 
     public static String read(HttpServletRequest request, String key) {
         try {
-            Cookie[] e = request.getCookies();
-            Cookie[] arr$ = e;
-            int len$ = e.length;
+            Cookie[] cookies = request.getCookies();
 
-            for (int i$ = 0; i$ < len$; ++i$) {
-                Cookie c = arr$[i$];
+            for (int i = 0; i < cookies.length; ++i) {
+                Cookie c = cookies[i];
                 if (c.getName().equals(key)) {
                     return c.getValue().trim();
                 }
             }
         } catch (NullPointerException var7) {
-            ;
         }
 
         return null;
