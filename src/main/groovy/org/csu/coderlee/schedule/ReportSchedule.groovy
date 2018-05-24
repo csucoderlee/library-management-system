@@ -5,25 +5,24 @@ import org.springframework.scheduling.annotation.Scheduled
 import org.springframework.stereotype.Component
 
 import javax.annotation.Resource
-import java.text.SimpleDateFormat
 
 /**
  * @author by bixi.lx
  * @created on 2018 05 19 21:55
  */
 @Component
-class ReportSchedule {
+class ReportSchedule implements ISchedule{
 
     @Resource
-    Handler handler;
+    Handler handler
 
-    @Scheduled(cron = "0/30 * * * * ?")
-    void testSchedule() {
-        println("每5s执行一次" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()))
+    @Scheduled(cron = "0/1 * * * * ?")
+    void testSchuduleCallback() {
+        handler.execute(this)
     }
 
-    @Scheduled(cron = "0/5 * * * * ?")
-    void testSchuduleCallback() {
-        handler.execute()
+    @Override
+    void callBack() {
+        System.out.println("call call call")
     }
 }
