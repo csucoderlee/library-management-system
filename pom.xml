@@ -10,8 +10,14 @@
     <packaging>war</packaging>
 
     <name>library-management-system Maven Webapp</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
+
+    <repositories>
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>https://maven.aliyun.com/repository/central</url>
+        </repository>
+    </repositories>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
