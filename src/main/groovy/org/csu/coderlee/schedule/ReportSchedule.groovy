@@ -23,6 +23,7 @@ class ReportSchedule implements ISchedule{
 
     @Override
     void callBack() {
+        println(System.getProperty("dev.open"))
         System.out.println("call call call")
     }
 }
