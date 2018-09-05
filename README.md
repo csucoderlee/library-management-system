@@ -20,3 +20,6 @@
     - 添加了mybatis 生成插件, 声明<phase>deploy</phase> mvn clean install 阶段不执行生成代码
     - 声明book 基本模型字段属性
 
+- 版本0.0.2
+    - 加入redis测试
+
