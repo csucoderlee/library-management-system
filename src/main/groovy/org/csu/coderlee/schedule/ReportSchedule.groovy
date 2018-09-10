@@ -10,7 +10,7 @@ import javax.annotation.Resource
  * @author by bixi.lx
  * @created on 2018 05 19 21:55
  */
-@Component
+//@Component
 class ReportSchedule implements ISchedule{
 
     @Resource
