@@ -198,6 +198,7 @@
             <!-- 编译src/main/groovy文件到 classes目录下 -->
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <!-- 这个版本号要使用3.x的版本，使用2.x的版本会淹没报错信息，曾经出现target目录不会生成class文件-->
                 <version>3.1</version>
                 <configuration>
                     <compilerId>groovy-eclipse-compiler</compilerId>
