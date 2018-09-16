@@ -10,12 +10,13 @@ import org.springframework.stereotype.Service
  * @created on 2018 04 17 17:12
  */
 @Service
-class AccountService {
+class AccountServiceImpl implements AccountService{
 
     @Autowired
     AccountMapper accountMapper;
 
-    Account selectById(id) {
-        accountMapper.selectById(id)
+    @Override
+    Account selectById(Long id) {
+        return accountMapper.selectById(id)
     }
 }

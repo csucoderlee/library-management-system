@@ -13,10 +13,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = "classpath:spring/spring-*.xml")
-class AccountServiceTest extends TestCase{
+class AccountServiceImplTest extends TestCase{
 
     @Autowired
-    AccountService accountService;
+    AccountServiceImpl accountService;
 
     @Test
     void test() {

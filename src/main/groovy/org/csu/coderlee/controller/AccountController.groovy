@@ -1,7 +1,7 @@
 package org.csu.coderlee.controller
 
 import org.csu.coderlee.model.Account
-import org.csu.coderlee.service.AccountService
+import org.csu.coderlee.service.AccountServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
@@ -18,7 +18,7 @@ import org.springframework.web.servlet.ModelAndView
 class AccountController {
 
     @Autowired
-    AccountService accountService;
+    AccountServiceImpl accountService;
 
     @RequestMapping(value = "/get")
     @ResponseBody
