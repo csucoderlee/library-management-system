@@ -7,6 +7,7 @@ package org.csu.coderlee.model
 class Book {
 
     //-----  来源于豆瓣api的信息  开始 ---------//
+
     /**
      * https://api.douban.com/v2/book/26708119
      */
@@ -53,12 +54,12 @@ class Book {
      * 豆瓣购买链接
      */
     def alt
+    //-----  来源于豆瓣api的信息  结束  ---------//
 
     /**
      * 分类信息、上架指导
      */
     List<Tag> tags
-    //-----  来源于豆瓣api的信息  结束  ---------//
 
     def ownerId
 

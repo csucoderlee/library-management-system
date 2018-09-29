@@ -26,6 +26,12 @@ class AccountController {
         return accountService.selectById(1)
     }
 
+    @RequestMapping(value = "/like")
+    @ResponseBody
+    Object accountLike() {
+        return accountService.selectByName("1")
+    }
+
     @RequestMapping(value = "/info")
     Object info() {
         Account account = new Account()

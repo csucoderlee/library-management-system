@@ -4,4 +4,6 @@ import org.csu.coderlee.model.Account;
 
 public interface AccountService {
     Account selectById(Long id);
+
+    Account selectByName(String username);
 }

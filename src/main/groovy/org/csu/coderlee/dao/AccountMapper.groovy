@@ -10,4 +10,6 @@ import org.mybatis.spring.annotation.MapperScan
 interface AccountMapper {
 
     Account selectById(id)
+
+    Account selectByName(username)
 }

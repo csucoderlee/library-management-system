@@ -19,4 +19,9 @@ class AccountServiceImpl implements AccountService{
     Account selectById(Long id) {
         return accountMapper.selectById(id)
     }
+
+    @Override
+    Account selectByName(String username) {
+        return accountMapper.selectByName(username)
+    }
 }
