@@ -6,5 +6,6 @@
     <mappers>
         <mapper resource="mybatis/mapper/accountMapper.xml"></mapper>
         <mapper resource="mybatis/mapper/bookMapper.xml"></mapper>
+        <mapper resource="mybatis/mapper/categoryMapper.xml"></mapper>
     </mappers>
 </configuration>
