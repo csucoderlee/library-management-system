@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--当scan属性设置为true时，配置文件如果发生改变，将会被重新加载，默认值为true-->
+<!--debug属性是否打印logback内部的日志信息-->
+<configuration scan="true" scanPeriod="1 seconds" debug="false">
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yy.MM.dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 输出service层 日志-->
+    <appender name="serviceFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>./service.log</file>
+    </appender>
+
+    <!-- 输出controller层 日志-->
+    <appender name="controllerFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>./controller.log</file>
+        <!-- encoder 一定要配置，否则不会向执行文件中输出日志 -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+    <!-- 输出sql 日志-->
+    <appender name="sqlFileAppender" class="ch.qos.logback.core.FileAppender">
+        <file>./sql.log</file>
+    </appender>
+
+    <!--没有设置addtivity，默认为true，将此loger的打印信息向上级传递-->
+    <logger name="org.csu.coderlee.controller" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="controllerFileAppender"/>
+    </logger>
+
+    <logger name="org.csu.coderlee.service" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="serviceFileAppender"/>
+    </logger>
+
+    <logger name="org.csu.coderlee.controller" additivity="false">
+        <level value="info"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <!--<logger name="com.ibatis" level="debug" additivity="false">-->
+    <!--<appender-ref ref="CONSOLE" />-->
+    <!--</logger>-->
+    <!--<logger name="java.sql.Connection" additivity="false">-->
+    <!--<level value="debug"/>-->
+    <!--<appender-ref ref="CONSOLE"/>-->
+    <!--</logger>-->
+    <logger name="java.sql.Statement" additivity="flase">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="sqlFileAppender"/>
+    </logger>
+    <logger name="java.sql.PreparedStatement" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="sqlFileAppender"/>
+    </logger>
+    <logger name="java.sql.ResultSet" additivity="false">
+        <level value="debug"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="sqlFileAppender"/>
+    </logger>
+
+    <!-- root 的日志级别， 比当前级别大的级别都会打印出来-->
+    <!-- logback的日志级别从小到大 ：TRACE, DEBUG, INFO, WARN, ERROR -->
+    <root level="debug">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>

@@ -2,6 +2,8 @@ package org.csu.coderlee.controller
 
 import org.csu.coderlee.model.Account
 import org.csu.coderlee.service.AccountServiceImpl
+import org.slf4j.Logger
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
@@ -17,12 +19,15 @@ import org.springframework.web.servlet.ModelAndView
 @RequestMapping(value = "/account")
 class AccountController {
 
+    Logger logger = LoggerFactory.getLogger(this.class)
+
     @Autowired
     AccountServiceImpl accountService;
 
     @RequestMapping(value = "/get")
     @ResponseBody
     Object account() {
+        logger.error("输出controller 层的日志到 controller.log 文件中")
         return accountService.selectById(1)
     }
 

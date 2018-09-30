@@ -123,11 +123,11 @@
             <version>${version.logback}</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>log4j-over-slf4j</artifactId>
-            <version>${version.slf4j}</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.slf4j</groupId>-->
+            <!--<artifactId>log4j-over-slf4j</artifactId>-->
+            <!--<version>${version.slf4j}</version>-->
+        <!--</dependency>-->
 
         <dependency>
             <groupId>junit</groupId>
