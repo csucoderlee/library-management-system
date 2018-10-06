@@ -41,7 +41,7 @@
 
 
     <!-- SqlSession模板类实例 -->
-    <bean id="sessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate" destroy-method="close">
         <constructor-arg index="0" ref="sqlSessionFactory"/>
     </bean>
 
