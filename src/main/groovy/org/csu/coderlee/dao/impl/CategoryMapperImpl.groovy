@@ -16,8 +16,11 @@ import javax.annotation.Resource
 @Repository
 class CategoryMapperImpl extends SqlSessionDaoSupport implements CategoryMapper {
 
+    @Override
     @Autowired
-    SqlSessionFactoryBean sqlSessionFactory;
+    void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+        super.setSqlSessionFactory(sqlSessionFactory);
+    }
 
     @Override
     Category selectOneById(Object id) {

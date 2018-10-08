@@ -10,12 +10,16 @@
 
     <!-- 输出service层 日志-->
     <appender name="serviceFileAppender" class="ch.qos.logback.core.FileAppender">
-        <file>./service.log</file>
+        <file>./log/service.log</file>
+        <!-- encoder 一定要配置，否则不会向执行文件中输出日志 -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
     </appender>
 
     <!-- 输出controller层 日志-->
     <appender name="controllerFileAppender" class="ch.qos.logback.core.FileAppender">
-        <file>./controller.log</file>
+        <file>./log/controller.log</file>
         <!-- encoder 一定要配置，否则不会向执行文件中输出日志 -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
@@ -25,7 +29,12 @@
 
     <!-- 输出sql 日志-->
     <appender name="sqlFileAppender" class="ch.qos.logback.core.FileAppender">
-        <file>./sql.log</file>
+        <file>./log/sql.log</file>
+        <!-- encoder 一定要配置，否则不会向执行文件中输出日志 -->
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{5} - %msg%n</pattern>
+        </encoder>
+
     </appender>
 
     <!--没有设置addtivity，默认为true，将此loger的打印信息向上级传递-->
