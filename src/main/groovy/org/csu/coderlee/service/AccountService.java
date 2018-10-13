@@ -1,9 +1,9 @@
-package org.csu.coderlee.service;
-
-import org.csu.coderlee.model.Account;
-
-public interface AccountService {
-    Account selectById(Long id);
-
-    Account selectByName(String username);
-}
+//package org.csu.coderlee.service;
+//
+//import org.csu.coderlee.model.Account;
+//
+//public interface AccountService {
+//    Account selectById(Long id);
+//
+//    Account selectByName(String username);
+//}

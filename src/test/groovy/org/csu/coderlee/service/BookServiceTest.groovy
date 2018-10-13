@@ -1,7 +1,6 @@
 package org.csu.coderlee.service;
 
-import junit.framework.TestCase;
-import org.csu.coderlee.dao.BookMapper;
+import junit.framework.TestCase
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;

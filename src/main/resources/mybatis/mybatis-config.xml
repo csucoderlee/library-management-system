@@ -4,8 +4,8 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <mappers>
-        <mapper resource="mybatis/mapper/accountMapper.xml"></mapper>
-        <mapper resource="mybatis/mapper/bookMapper.xml"></mapper>
+        <!--<mapper resource="mybatis/mapper/accountMapper.xml"></mapper>-->
+        <!--<mapper resource="mybatis/mapper/bookMapper.xml"></mapper>-->
         <mapper resource="mybatis/mapper/categoryMapper.xml"></mapper>
     </mappers>
 </configuration>

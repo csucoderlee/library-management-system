@@ -1,4 +1,4 @@
-package org.csu.coderlee.dao
+package org.csu.coderlee.dao.mapper
 
 import org.csu.coderlee.model.Account
 import org.mybatis.spring.annotation.MapperScan

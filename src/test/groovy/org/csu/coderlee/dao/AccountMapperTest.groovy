@@ -1,5 +1,6 @@
 package org.csu.coderlee.dao
 
+import org.csu.coderlee.dao.mapper.AccountMapper
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired

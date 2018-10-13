@@ -4,6 +4,7 @@ import org.apache.ibatis.session.SqlSessionFactory
 import org.csu.coderlee.dao.CategoryMapper
 import org.csu.coderlee.model.Category
 import org.mybatis.spring.SqlSessionFactoryBean
+import org.mybatis.spring.SqlSessionTemplate
 import org.mybatis.spring.support.SqlSessionDaoSupport
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Repository
@@ -16,10 +17,19 @@ import javax.annotation.Resource
 @Repository
 class CategoryMapperImpl extends SqlSessionDaoSupport implements CategoryMapper {
 
+    @Autowired
+    private SqlSessionFactoryBean sqlSessionFactoryBean
+
+//    @Override
+//    @Autowired
+//    void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
+//        super.setSqlSessionFactory(sqlSessionFactory);
+//    }
+
     @Override
     @Autowired
-    void setSqlSessionFactory(SqlSessionFactory sqlSessionFactory) {
-        super.setSqlSessionFactory(sqlSessionFactory);
+    void setSqlSessionTemplate(SqlSessionTemplate sqlSessionTemplate) {
+        super.setSqlSessionTemplate(sqlSessionTemplate)
     }
 
     @Override
