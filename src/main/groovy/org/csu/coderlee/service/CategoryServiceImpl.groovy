@@ -1,6 +1,6 @@
 package org.csu.coderlee.service
 
-import org.csu.coderlee.dao.CategoryMapper
+import org.csu.coderlee.dao.mapper.CategoryMapper
 import org.csu.coderlee.model.Category
 import org.springframework.stereotype.Service
 

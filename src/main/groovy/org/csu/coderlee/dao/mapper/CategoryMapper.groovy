@@ -1,4 +1,4 @@
-package org.csu.coderlee.dao
+package org.csu.coderlee.dao.mapper
 
 import org.csu.coderlee.model.Category
 
