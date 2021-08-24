@@ -27,7 +27,7 @@
         <druid.version>1.0.7</druid.version>
         <mysql.version>5.1.24</mysql.version>
         <groovy.version>2.4.6</groovy.version>
-        <fastjson.version>1.1.46</fastjson.version>
+        <fastjson.version>1.2.25.sec10</fastjson.version>
         <mybatis.version>3.2.3</mybatis.version>
         <spring.version>3.2.8.RELEASE</spring.version>
         <version.logback>1.2.0</version.logback>
